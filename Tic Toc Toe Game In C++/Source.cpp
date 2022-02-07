@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-int n;      //number to end game!.
 int num;    //number enter to play.
 char ch[9] = { '1','2','3','4','5','6','7','8','9' }; 
 char player1 = { 'X' };
@@ -11,30 +10,24 @@ void player_1();
 void player_2();
 bool X_Wins();
 bool O_Wins();
-//void check();
 
 int main()
 {
-	//int n;
-	/*cout << "\t\t\t\tTic Toc Toe Game\n" << endl;
+	int n = -1;
+	cout << "\t\t\t\tTic Toc Toe Game\n" << endl;
 	cout << "\t\t\t\tplayer<1>: X\n";
 	cout << "\t\t\t\tplayer<2>: O\n";
-	cout << "\n\n";*/
+	cout << "\n\n";
 	do
 	{
-		system("cls");
-		cout << "\t\t\t\tTic Toc Toe Game\n" << endl;
-		cout << "\t\t\t\tplayer<1>: X\n";
-		cout << "\t\t\t\tplayer<2>: O\n";
-		cout << "\n\n";
 		Draw();
 		player_1();
 		Draw();
 		if (X_Wins())
 		{
 			cout << "\t\t\t\tPlayer<1> Wins!" << endl;
-			cout << "\t\t\t\tTo End Game press (-1)\n";
-			cin >> n;
+			n = 1;
+			break;
 		}
 		cout << "\n\n\n";
 		player_2();
@@ -42,12 +35,11 @@ int main()
 		if (O_Wins())
 		{
 			cout << "\t\t\t\tPlayer<2> Wins!" << endl;
-			cout << "\t\t\t\tTo End Game press (-1)\n";
-			cin >> n;
+			n = 1;
+			break;
 		}
 		cout << "\n\n\n";
-		
-	} while (n!=-1);
+	} while (n == -1);
 
 	return 0;
 }
@@ -184,29 +176,3 @@ bool O_Wins()
 	else
 		return false;
 }
-//check player 1 or player 2 wins.
-/*void check()
-{
-	if (X_Wins())
-	{
-		cout << "\t\t\t\tPlayer<1> Wins!" << endl;
-		cout << "\t\t\t\tTo End Game press (-1)\n";
-		cin >> n;
-	}else if (O_Wins())
-	{
-		cout << "\t\t\t\tPlayer<2> Wins!" << endl;
-		cout << "\t\t\t\tTo End Game press (-1)\n";
-		cin >> n;
-	}
-	else
-	{
-		Draw();
-		player_1();
-		Draw();
-		cout << "\n\n\n";
-		player_2();
-		Draw();
-		cout << "\n\n\n";
-	}
-
-}*/
